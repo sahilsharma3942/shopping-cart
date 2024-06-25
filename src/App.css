@@ -1,38 +1,245 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+}
+.home-page{
+  padding: 15px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product img {
+  max-width: 100%;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-detail {
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.brandlink {
+  color: white; /* Set text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.brandlink:hover {
+  color: lightgray; /* Change color on hover if needed */
+}
+.product-detail {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+}
+
+.product-detail img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.product-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-detail .description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.product-detail .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #28a745;
+  text-align: center;
+}
+
+
+
+
+.navbar {
+  background-color: #343a40;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.navbar-brand {
+  flex: 1;
+  padding: 20px;
+}
+
+.brand-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+
+
+.navbar-cart {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  background-color: #28a745;
   color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-dropdown {
+  position: relative;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  max-height: 300px; /* Set maximum height for scrolling */
+  overflow-y: auto;/* Enable vertical scrolling */
+  color: #333; 
+  text-align: center;
+  display: none;
+}
+
+
+.cart-content.show {
+  display: block;
+}
+
+.cart-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.cart-content ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-content ul li img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-content ul li div {
+  flex: 1;
+}
+
+.link{
+  text-decoration: none;
+  color: #333;
+  font-weight: bolder;
+}
+
+
+
+
+
+/* cartpage */
+
+.cart-page {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.quantity-input {
+  width: 50px;
+}
+
+.total-section {
+  margin-top: 20px;
+  text-align: right;
+}
+.cart-item .item-info button {
+  
+  margin:4px; 
+}
+
+
+
+.product-title {
+  
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+  display: block; /* Ensure it behaves like a block element */
+  max-width: 100%; /* Ensure it takes full width of the container */
 }
